@@ -1,0 +1,22 @@
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu div{
+  padding-right: 10%;
+}
+
+.menu span{
+  padding-left: 5%;
+}
+
+.menu div button{
+  margin: 10%;
+}
+@media (max-width: 709px){
+
+  .frButton{
+    display: none;
+  }
+}

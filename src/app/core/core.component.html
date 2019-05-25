@@ -1,0 +1,72 @@
+<div class="wrapper">
+  <div class="content">
+    <mat-card *ngFor="let d of userData" class="userData">
+      <a href="https://vk.com/id{{d.id}}">
+      <div>
+      <img mat-card-avatar src={{d.photoUri}} alt="">
+      <div>{{d.lastName}} {{d.firstName}}</div>
+  </div>
+      </a>
+    </mat-card>
+    <ng-container *ngFor="let friend of friends" class="task-list">
+      <div *ngFor="let data of friendsData"><div *ngIf="friend.id==data.id">
+      <mat-card class="task-item">
+        <div class="text" >
+          <a href="https://vk.com/id{{friend.id}}">
+          <mat-card-header>
+            <mat-card>
+            <img mat-card-avatar src={{data.photoUri}} alt="">
+           <div>{{friend.lastName}} {{friend.firstName}}</div>
+        </mat-card>
+          </mat-card-header>
+           </a>
+          <mat-tab-group class="tab">
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <p>Основная информация</p>
+              </ng-template>
+
+              <mat-list>
+                <mat-list-item>Имя: {{friend.firstName}}</mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>Фамилия: {{friend.lastName}}</mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>id: <a href="https://vk.com/id{{friend.id}}">{{friend.id}}</a></mat-list-item>
+              </mat-list>
+            </mat-tab>
+
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <p>Дополнительно</p>
+              </ng-template>
+              <mat-list>
+                <mat-list-item>Дата рождения: {{data.bDate}}</mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>Страна:     {{data.country.title}}</mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>Город:    {{data.city.title}}</mat-list-item>
+              </mat-list>
+            </mat-tab>
+
+
+            <mat-tab>
+              <ng-template mat-tab-label>
+                <p>Друзья</p>
+              </ng-template>
+
+              <mat-list>
+                <mat-list-item>Друзя: {{data.counters.friends}}</mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>Подписчики: {{data.counters.followers}}</mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-list-item>Общие друзья: {{data.counters.mutualFriends}}</mat-list-item>
+              </mat-list>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+
+      </mat-card>
+      </div></div>
+    </ng-container>
+  </div>
+</div>

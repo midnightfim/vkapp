@@ -1,0 +1,65 @@
+.wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.mat-card-header > mat-card{
+  display: flex;
+  background:  #5181b8 ;
+  width: 90%;
+}
+
+.mat-card-header > mat-card img, .userData > img{
+  width: 50px;
+  height: 50px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.mat-card-header > mat-card div, .userData{
+  flex-grow: 0.2;
+  text-align: center;
+  align-self: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.userData{
+  background:  #5181b8 ;
+}
+
+.content{
+  width: 66%;
+}
+
+
+.task-item{
+  margin: 5px;
+  max-width: 100%;
+}
+
+.text{
+  align-self: center;
+  padding-left: 2%;
+}
+
+.tab{
+  width: 100%;
+}
+
+.tab p{
+  font-weight: bold;
+  font-size: 15px;
+}
+@media (max-width: 709px){
+  .content{
+    width: 100%;
+  }
+  .mat-card-header > mat-card div {
+    padding-left: 5%;
+  }
+
+  }
+
